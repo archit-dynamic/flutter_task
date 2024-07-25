@@ -10,8 +10,6 @@ A Flutter mobile application based on the provided Figma design.
 - [Setup Instructions](#setup-instructions)
 - [How to Run the App](#how-to-run-the-app)
 - [Approach](#approach)
-- [Screenshots](#screenshots)
-- [Contact](#contact)
 
 ## Overview
 
@@ -39,7 +37,7 @@ cd your-repo-name
 ```
 
 2. **Install Flutter:**
-- If you haven't already installed Flutter, follow the official [Flutter installation guide].
+- If you haven't already installed Flutter, follow the official Flutter installation guide.
 
 3. **Install dependencies:**
 
@@ -58,11 +56,11 @@ flutter run
 ```
 
 ## Approach
-## Design and Architecture
+**Design and Architecture**
 - **Component-based structure**: The application is built using a component-based structure to ensure reusability and maintainability.
 - **State management**: Utilized Flutter's built-in state management solutions such as StatefulWidget.
 
-## Development Process
+**Development Process**
 1. **UI Implementation**: Started by implementing the UI components as per the Figma design.
 2. **State Management**: Managed state using Flutter’s built-in tools, ensuring efficient data flow.
 
