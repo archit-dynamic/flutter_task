@@ -99,7 +99,7 @@ class _CampusPageState extends State<CampusPage> {
                   ChannelCard(
                     imageUrl: AppImages.channel1,
                     color: AppColors.primaryGreen,
-                    tag: 'Tag',
+                    tag: 'Live',
                     title: 'Card Title',
                     description: 'Card Description',
                     height: 185,
@@ -124,7 +124,7 @@ class _CampusPageState extends State<CampusPage> {
                   ChannelCard(
                     imageUrl: AppImages.channel2,
                     color: AppColors.channelBlue,
-                    tag: 'Tag',
+                    tag: 'Live',
                     title: 'Card Title',
                     description: 'Card Description',
                     height: 185,
@@ -293,6 +293,9 @@ class _CampusPageState extends State<CampusPage> {
                 ),
               ],
             ),
+          ),
+          const SizedBox(
+            height: 60,
           ),
         ],
       ),

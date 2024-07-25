@@ -22,4 +22,9 @@ class AppImages {
   static String speechBubble = "assets/images/speech_bubble.svg";
   static String search = "assets/images/search.svg";
   static String speechBubble2 = "assets/images/2_speech_bubbles.svg";
+  static String campus = "assets/images/home.svg";
+  static String channels = "assets/images/groups.svg";
+  static String audio = "assets/images/microphone.svg";
+  static String rewards = "assets/images/present.svg";
+  static String notifications = "assets/images/alarm_bell.svg";
 }

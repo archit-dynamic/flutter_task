@@ -6,6 +6,7 @@ class AppColors {
   static const Color bodyBlack = Color(0xFF2D2B2C);
   static const Color buttonBlack = Color(0xFF242424);
   static const Color headingGrey = Color(0xFF747474);
+  static const Color borderGrey = Color(0xFFDCDCDC);
   static const Color primaryGreen = Color(0xFF16C083);
   static const Color white = Color(0xFFFFFFFF);
   static const Color buttonGrey = Color(0xFF929292);
@@ -13,4 +14,5 @@ class AppColors {
   static const Color live = Color(0xFFF75F5F);
   static const Color channelBlue = Color(0xFF7B61FF);
   static const Color shadow = Color(0xFF2E2E2E);
+  static const Color tagGreen = Color(0xFF78EFC5);
 }

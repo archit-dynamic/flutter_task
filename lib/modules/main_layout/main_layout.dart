@@ -79,69 +79,130 @@ class _MainLayoutState extends State<MainLayout> {
           ),
         ),
       ),
-      body: PageView(
-        controller: pageController,
-        onPageChanged: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
-        children: const [
-          CampusPage(),
-          ChannelsPage(),
-          AudioPage(),
-          RewardsPage(),
-          NotificationsPage(),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: selectedIndex,
-        onTap: onItemTapped,
-        items: [
-          buildBottomNavigationBarItem(Icons.home, 'Campus'),
-          buildBottomNavigationBarItem(Icons.search, 'Channels'),
-          buildBottomNavigationBarItem(Icons.notifications, 'Audio'),
-          buildBottomNavigationBarItem(Icons.message, 'Rewards'),
-          buildBottomNavigationBarItem(Icons.person, 'Notifications'),
+      body: Stack(
+        children: [
+          PageView(
+            controller: pageController,
+            onPageChanged: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            children: [
+              const CampusPage(),
+              ChannelsPage(),
+              const AudioPage(),
+              const RewardsPage(),
+              const NotificationsPage(),
+            ],
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: CustomBottomNavigationBar(
+              selectedIndex: selectedIndex,
+              onItemTapped: onItemTapped,
+            ),
+          ),
         ],
       ),
       floatingActionButton: selectedIndex == 0
-          ? FloatingActionButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(1000)),
-              onPressed: () {},
-              backgroundColor: AppColors.primaryGreen,
-              tooltip: 'Add',
-              child: const Icon(
-                Icons.add,
-                size: 35,
-                color: AppColors.white,
+          ? Transform.translate(
+              offset: const Offset(0, -70),
+              child: FloatingActionButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(1000)),
+                onPressed: () {},
+                backgroundColor: AppColors.primaryGreen,
+                tooltip: 'Add',
+                child: const Icon(
+                  Icons.add,
+                  size: 35,
+                  color: AppColors.white,
+                ),
               ),
             )
           : null,
     );
   }
+}
 
-  BottomNavigationBarItem buildBottomNavigationBarItem(
-      IconData icon, String label) {
-    return BottomNavigationBarItem(
-      icon: Stack(
+class CustomBottomNavigationBar extends StatelessWidget {
+  final int selectedIndex;
+  final Function(int) onItemTapped;
+
+  const CustomBottomNavigationBar({
+    super.key,
+    required this.selectedIndex,
+    required this.onItemTapped,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          border: Border.symmetric(
+              horizontal: BorderSide(color: AppColors.borderGrey, width: 1))),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(icon),
-          if (selectedIndex == bottomNavLabels.indexOf(label))
+          _buildNavItem(AppImages.campus, 'Campus', 0),
+          _buildNavItem(AppImages.channels, 'Channels', 1),
+          _buildNavItem(AppImages.audio, 'Audio', 2),
+          _buildNavItem(AppImages.rewards, 'Rewards', 3),
+          _buildNavItem(AppImages.notifications, 'Notifications', 4),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNavItem(String icon, String label, int index) {
+    return GestureDetector(
+      onTap: () => onItemTapped(index),
+      child: Stack(
+        children: [
+          if (selectedIndex == index)
             Positioned(
               top: 0,
               left: 0,
               right: 0,
               child: Container(
-                height: 5,
-                color: Colors.blue,
+                height: 4,
+                decoration: const BoxDecoration(
+                    color: AppColors.primaryGreen,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(4),
+                        bottomRight: Radius.circular(4))),
               ),
             ),
+          Container(
+            height: 60,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  icon,
+                  color: selectedIndex == index
+                      ? AppColors.primaryGreen
+                      : AppColors.buttonGrey,
+                ),
+                Text(
+                  label,
+                  style: TextStyle(
+                      color: selectedIndex == index
+                          ? AppColors.primaryGreen
+                          : AppColors.buttonGrey,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
-      label: label,
     );
   }
 }

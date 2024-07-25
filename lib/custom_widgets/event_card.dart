@@ -44,6 +44,7 @@ class EventCard extends StatelessWidget {
             fit: BoxFit.cover,
           )),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Padding(
             padding: const EdgeInsets.only(
@@ -73,18 +74,21 @@ class EventCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 40,
-            right: -10,
+            bottom: 55,
+            right: 10,
             child: profilePictureRow,
           ),
           Positioned(
             bottom: -3,
-            right: -10,
+            right: -5,
             child: CustomButton(
-              buttonText: "Join",
+              buttonText: "Sign up for Event",
               onClick: () {},
               borderWidth: 3,
-              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 10),
+              height: 56,
+              textSize: 14,
+              textWeight: FontWeight.w700,
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
               buttonColor: AppColors.buttonBlack,
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:singhania_edu_flutter_task/custom_widgets/custom_text.dart';
+import 'package:singhania_edu_flutter_task/utils/app_colors.dart';
 
 class ProfilePictureRow extends StatelessWidget {
   final List<String> profilePictures;
@@ -37,6 +38,9 @@ class ProfilePictureRow extends StatelessWidget {
             radius: 11,
             child: CustomText(
               text: '+${profilePictures.length - 3}',
+              size: 8,
+              fontWeight: FontWeight.w700,
+              color: AppColors.bodyBlack,
             ),
           ),
         ),
@@ -45,7 +49,7 @@ class ProfilePictureRow extends StatelessWidget {
 
     return [
       SizedBox(
-        width: 80.0 + (profilePictures.length > 3 ? 20.0 : 0.0),
+        width: 66.0 + (profilePictures.length > 3 ? 11.0 : 0.0),
         height: 40.0,
         child: Stack(
           children: widgets,
