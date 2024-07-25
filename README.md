@@ -10,6 +10,7 @@ A Flutter mobile application based on the provided Figma design.
 - [Setup Instructions](#setup-instructions)
 - [How to Run the App](#how-to-run-the-app)
 - [Approach](#approach)
+- [Contact](#contact)
 
 ## Overview
 
@@ -63,4 +64,9 @@ flutter run
 **Development Process**
 1. **UI Implementation**: Started by implementing the UI components as per the Figma design.
 2. **State Management**: Managed state using Flutter’s built-in tools, ensuring efficient data flow.
+
+## Contact
+For any questions or feedback, feel free to reach out:
+- Name: Archit Paresh Patil
+- Email: architdynamic@gmail.com
 
