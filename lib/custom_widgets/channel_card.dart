@@ -124,7 +124,9 @@ class ChannelCard extends StatelessWidget {
             right: -5,
             child: CustomButton(
               buttonText: buttonText ?? "Join",
-              onClick: () {},
+              onClick: () {
+                //write the logic to join here
+              },
               borderWidth: 3,
               height: buttonHeight,
               padding: buttonPadding ??

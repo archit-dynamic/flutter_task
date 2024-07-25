@@ -131,6 +131,7 @@ class ChannelsPage extends StatelessWidget {
               buttonPadding:
                   const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
               profilePictureRow: ProfilePictureRow(
+                length: 45,
                 profilePictures: [
                   AppImages.profile1,
                   AppImages.profile2,
@@ -162,6 +163,7 @@ class ChannelsPage extends StatelessWidget {
               imageHeight: 180,
               imageWidth: 100,
               profilePictureRow: ProfilePictureRow(
+                length: 45,
                 profilePictures: [
                   AppImages.profile1,
                   AppImages.profile2,

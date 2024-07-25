@@ -83,7 +83,9 @@ class EventCard extends StatelessWidget {
             right: -5,
             child: CustomButton(
               buttonText: "Sign up for Event",
-              onClick: () {},
+              onClick: () {
+                //Write signup event logic here
+              },
               borderWidth: 3,
               height: 56,
               textSize: 14,

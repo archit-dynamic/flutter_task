@@ -4,8 +4,13 @@ import 'package:singhania_edu_flutter_task/utils/app_colors.dart';
 
 class ProfilePictureRow extends StatelessWidget {
   final List<String> profilePictures;
+  final int length;
 
-  const ProfilePictureRow({super.key, required this.profilePictures});
+  const ProfilePictureRow({
+    super.key,
+    required this.profilePictures,
+    required this.length,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +21,7 @@ class ProfilePictureRow extends StatelessWidget {
 
   List<Widget> _buildProfilePictures() {
     List<Widget> widgets = [];
+    //Only show three profiles and show the rest as number
     int displayCount = profilePictures.length > 3 ? 3 : profilePictures.length;
 
     for (int i = 0; i < displayCount; i++) {
@@ -37,7 +43,7 @@ class ProfilePictureRow extends StatelessWidget {
           child: CircleAvatar(
             radius: 11,
             child: CustomText(
-              text: '+${profilePictures.length - 3}',
+              text: '+${length - 3}',
               size: 8,
               fontWeight: FontWeight.w700,
               color: AppColors.bodyBlack,

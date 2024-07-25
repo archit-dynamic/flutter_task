@@ -53,7 +53,8 @@ class FollowCard extends StatelessWidget {
               const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () {
-                  // Your onPressed code here
+                  //write the logic to follow here
+                  //call an api
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.bodyBlack,
@@ -82,7 +83,10 @@ class FollowCard extends StatelessWidget {
               Icons.close,
               size: 12,
             ),
-            onPressed: () {},
+            onPressed: () {
+              //logic to remove the card from the list here
+              //call an api to update in the server
+            },
           ),
         ),
       ],

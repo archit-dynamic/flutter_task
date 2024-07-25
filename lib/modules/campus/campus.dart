@@ -106,6 +106,7 @@ class _CampusPageState extends State<CampusPage> {
                     width: 247,
                     imageWidth: 70,
                     profilePictureRow: ProfilePictureRow(
+                      length: 45,
                       profilePictures: [
                         AppImages.profile1,
                         AppImages.profile2,
@@ -132,6 +133,7 @@ class _CampusPageState extends State<CampusPage> {
                     imageHeight: 180,
                     imageWidth: 100,
                     profilePictureRow: ProfilePictureRow(
+                      length: 45,
                       profilePictures: [
                         AppImages.profile1,
                         AppImages.profile2,
@@ -205,6 +207,7 @@ class _CampusPageState extends State<CampusPage> {
               imageHeight: 180,
               imageWidth: 100,
               profilePictureRow: ProfilePictureRow(
+                length: 24,
                 profilePictures: [
                   AppImages.profile1,
                   AppImages.profile2,

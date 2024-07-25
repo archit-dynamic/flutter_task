@@ -141,6 +141,7 @@ class _QuestionCardState extends State<QuestionCard> {
                     ),
                     GestureDetector(
                       onTap: () {
+                        //logic to expand
                         setState(() {
                           isExpanded = !isExpanded;
                         });
@@ -163,7 +164,10 @@ class _QuestionCardState extends State<QuestionCard> {
                     CustomButton(
                       icon: SvgPicture.asset(AppImages.arrowUp),
                       buttonText: "${widget.upvoteCount} upvotes",
-                      onClick: () {},
+                      onClick: () {
+                        //write logic to upvote here
+                        //call an api
+                      },
                       borderWidth: 3,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 6),
@@ -175,16 +179,22 @@ class _QuestionCardState extends State<QuestionCard> {
                     const SizedBox(
                       width: 8,
                     ),
-                    Container(
-                      width: 50,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: AppColors.buttonGreyLight,
-                        borderRadius: BorderRadius.circular(1000),
-                      ),
-                      child: SvgPicture.asset(
-                        AppImages.arrowDown,
+                    GestureDetector(
+                      onTap: () {
+                        //write logic to down vote here
+                        //call an api
+                      },
+                      child: Container(
+                        width: 50,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: AppColors.buttonGreyLight,
+                          borderRadius: BorderRadius.circular(1000),
+                        ),
+                        child: SvgPicture.asset(
+                          AppImages.arrowDown,
+                        ),
                       ),
                     ),
                   ],
@@ -192,7 +202,9 @@ class _QuestionCardState extends State<QuestionCard> {
                 CustomButton(
                   icon: SvgPicture.asset(AppImages.speechBubble),
                   buttonText: "${widget.answerCount} Answers",
-                  onClick: () {},
+                  onClick: () {
+                    //Write logic to show answers here
+                  },
                   borderWidth: 3,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
